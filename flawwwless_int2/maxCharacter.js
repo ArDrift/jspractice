@@ -1,5 +1,7 @@
-let counter_1 = 0;
-let counter_2 = 1;
+// Occurence counter
+let occCounter = 0;
+// Position counter
+let posCounter = 1;
 let mostRepeated;
 
 function maxCharacter(str) {
@@ -11,18 +13,18 @@ function maxCharacter(str) {
     for (let j = i; j < strArray.length; j++) {
       // If same is found increase counter
       if (strArray[i] == strArray[j]) {
-        counter_1++;
+        occCounter++;
       }
       // If counter is greater than one it's a repeated char
-      if (counter_2 < counter_1) {
-        mostRepeated = strArray[counter_2];
+      if (posCounter < occCounter) {
+        posCounter = occCounter;
+        mostRepeated = strArray[i];
       }
     }
+    occCounter = 0;
   }
-  counter_1 = 0;
   console.log(mostRepeated);
   return mostRepeated;
 }
 
-maxCharacter("canada");
-
+maxCharacter("flawwwless");
