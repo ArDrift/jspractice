@@ -1,12 +1,11 @@
-// Occurence counter
-let occCounter = 0;
-// Position counter
-let posCounter = 1;
-let mostRepeated;
-
 function maxCharacter(str) {
+  // Occurence counter
+  let occCounter = 0;
+  // Position counter
+  let posCounter = 1;
+  let mostRepeated;
   // Split input
-  const strArray = str.split("");
+  const strArray = str.toLowerCase().split("");
   // Check each char
   for (let i = 0; i < strArray.length; i++) {
     // Loop through array for each char
