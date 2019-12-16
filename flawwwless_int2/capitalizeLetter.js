@@ -1,25 +1,24 @@
 function capitalizeLetters(str) {
-  // Split input to words
-  const wordArray = str.split(" ");
-	// Declare final output
-	let capStr = "";
-  // Go through each word
-  for (let i = 0; i < wordArray.length; i++) {
-    // Split current word in cycle
-    let currentWord = wordArray[i].split("");
-    // Capitalize first letter
-    let capLetter = currentWord[0].toUpperCase();
-		// Delete original first letter
-		currentWord[0] = "";
-    // Join them to a string
-		let finalWord = capLetter + currentWord.join("");
-		capStr += finalWord + " ";
-  }
-	capStr = capStr.split("");
-  // Get rid of last space
-  capStr[capStr.length - 1] = "";
-  capStr = capStr.join("");
-  return capStr;
+  // Declare variables inside function
+	const words = str.split(" ");
+	let capitalWords = "";
+	// words counter
+	for (let i = 0; i < words.length; i++) {
+	  // Split current word to array
+	  let wordLetters = words[i].split("");
+	  // Capitalize current word
+	  wordLetters[0] = wordLetters[0].toUpperCase();
+	  // Join back to string
+	  wordLetters = wordLetters.join("");
+	  // Add each word to final result separated with space
+	  capitalWords += wordLetters + " ";
+	}
+	// Delete last space
+	capitalWords = capitalWords.split("");
+	capitalWords[capitalWords.length - 1] = "";
+	capitalWords = capitalWords.join("");
+	console.log(capitalWords);
+	return capitalWords;
 }
 
 capitalizeLetters("james bond");
