@@ -7,6 +7,11 @@ function bin2dec(binInput) {
     if (binDigits[i] === "1") {
       result += Math.pow(2, powerCounter);
     }
+    // if digit is neither a 1 nor a 0, e.g. not binary
+    else if (binDigits[i] !== "0") {
+      console.log("Error, input is not a binary number!");
+      return "Error, input is not a binary number!";
+    }
   }
   console.log(result);
   return result;
