@@ -8,7 +8,7 @@ function hex2dec(hexInput) {
       result += hexDigits[i] * Math.pow(16, powerCounter);
     }
     else {
-      switch (hexDigits[i]) {
+      switch (hexDigits[i].toUpperCase()) {
         case "A":
           result += 10 * Math.pow(16, powerCounter);
         break;
