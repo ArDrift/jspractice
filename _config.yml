@@ -1,0 +1,7 @@
+---
+title: JS Practice
+exclude:
+- ".gitignore"
+- ".jekyll-cache"
+- README.md
+---
