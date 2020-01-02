@@ -9,12 +9,6 @@
     <title>Binary to Decimal converter</title>
     
     <script type="text/javascript" src="bin2dec.js"></script>
-    
-    <style>
-    body {
-      text-align: center;
-    }
-    </style>
 
   </head>
 
@@ -24,13 +18,10 @@
   
   <h1>Binary to decimal converter</h1>
   
-  <input id="binInput" type="number">
+  <input id="binInput" oninput="bin2dec()" type="number">
   
   </br>
-  </br>
-  
-  <button onclick="bin2dec()">Convert</button>
-  
+
   <p>Result is: </p>
     
   <input id="result" disabled>
