@@ -1,36 +1,31 @@
 function dec2bin(decInput) {
-  // No. of bytes needed
-  let binNum = [];
+  // Variables
   let decNum = decInput;
-  const byteNum = Math.floor(decInput / 256) + 1;
+  let binNum = [];
+  let binOut = 0;
   let powerCounter = 0;
-  console.log("Number of bytes: " + byteNum);
-  // Counter for each byte
-  for (let i = 0; i < byteNum; i++) {
-    // 2^x needed to be subtracted
-    powerCounter = byteNum * 8 - 1;
-    console.log("Power counter start: " + powerCounter);
+  let bytesNum = 1;
+
+  // Byte counter
+  bytesNum += Math.floor(decInput / 256);
+  console.log("Number of bytes: " + bytesNum);
+  // Start from power n
+  powerCounter = bytesNum * 8 - 1;
+  console.log("Start subtracting from: " + Math.pow(2, powerCounter));
+  for (bytesNum; bytesNum >= 1; bytesNum--) {
     for (powerCounter; powerCounter >= 0; powerCounter--) {
-      // If result is more than zero, bit is 1
-      if (decNum - Math.pow(2, powerCounter) > 0) {
+      if (decNum - Math.pow(2, powerCounter) >= 0) {
         decNum = decNum - Math.pow(2, powerCounter);
-        //console.log(decNum);
-      }
-      // If result is less than zero, bit is 0
-      else if (decNum - Math.pow(2, powerCounter) < 0) {
-        binNum.push(0);
-        //console.log(decNum);
-      }
-      // If result is 0, final result is computed
-      else {
         binNum.push(1);
-        //console.log(binNum);
+      }
+      else {
+        binNum.push(0);
       }
     }
-    binNum = binNum.join("");
-    console.log("Result is: " +binNum);
-    return binNum;
   }
+  binOut = binNum.join("");
+  console.log("Result is: " + binOut);
+  return binOut;
 }
 
-dec2bin(6);
+dec2bin(338);
