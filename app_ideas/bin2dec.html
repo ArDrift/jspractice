@@ -3,29 +3,29 @@
 <html>
 
   <head>
-    
+
     <meta charset="utf-8">
-    
-    <title>Binary to Decimal converter</title>
-    
-    <script type="text/javascript" src="bin2dec.js"></script>
+
+    <title>Binary - Decimal converter</title>
+
+    <script type="text/javascript" src="decBinConvert.js"></script>
 
   </head>
 
 
 
   <body>
-  
-  <h1>Binary to decimal converter</h1>
-  
-  <input id="binInput" oninput="bin2dec()" type="number">
-  
+
+  <h1>Binary - Decimal converter</h1>
+
+  <label for="binField">Binary</label>
+  <input id="binField" oninput="bin2dec()">
+
   </br>
 
-  <p>Result is: </p>
-    
-  <input id="result" disabled>
-  
+  <label for="decField">Decimal</label>
+  <input id="decField" oninput="dec2bin()">
+
   </body>
 
 </html>
